@@ -1,0 +1,50 @@
+<idea-plugin>
+    <id>com.aboat365.tetris</id>
+    <name>Tetris Game</name>
+    <vendor email="clear_windy@yeah.net" url="https://aboat365.com/">ABoat365</vendor>
+    <description><![CDATA[
+    <p>Tetris is a classic casual little game that allows you to relax in the middle of a busy day at work. After the installation is complete, a new TAB will appear on the right toolbar, click open to start the game. By default, the arrow key is used for control, the space key is hard placed, and the R key is restarted. User-defined keys are supported.<br>
+    Two productivity tools are recommended:
+    </p>
+    <ul>
+        <li><a href="https://plugins.jetbrains.com/plugin/23146-feign-helper">Feign-Helper</a></li>
+        <li><a href="https://plugins.jetbrains.com/plugin/23561-database-buddy">Database Buddy</a></li>
+    </ul>
+    <p>俄罗斯方块是一个经典休闲小游戏，让你在繁忙的工作中放松一下。安装完后在右侧工具栏会出现一个新的选项卡，点击打开就可以开始游戏了。默认使用方向键控制，空格键硬降，R键重新开始，支持自定义按键。<br>
+    推荐两款生产力工具：
+    </p>
+    <ul>
+        <li><a href="https://plugins.jetbrains.com/plugin/23146-feign-helper">Feign-Helper</a></li>
+        <li><a href="https://plugins.jetbrains.com/plugin/23561-database-buddy">Database Buddy</a></li>
+    </ul>
+]]></description>
+    <depends>com.intellij.modules.platform</depends>
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow id="Tetris Game" anchor="right" icon="/icon/tetris.svg"
+                    factoryClass="com.aboat365.tetris.TetrisToolWindowFactory" secondary="false"/>
+        <applicationService serviceImplementation="com.aboat365.tetris.storage.KeyMapping"/>
+    </extensions>
+    <actions>
+        <group id="tetrisAction"/>
+        <action id="tetris.start"
+                class="com.aboat365.tetris.action.StartAction"
+                icon="AllIcons.Actions.Execute">
+            <add-to-group group-id="tetrisAction"/>
+        </action>
+        <action id="tetris.restart"
+                class="com.aboat365.tetris.action.RestartAction"
+                icon="AllIcons.Actions.Restart">
+            <add-to-group group-id="tetrisAction"/>
+        </action>
+        <action id="tetris.config"
+                class="com.aboat365.tetris.action.ConfigAction"
+                icon="AllIcons.Actions.InlayGear">
+            <add-to-group group-id="tetrisAction"/>
+        </action>
+        <action id="tetris.about"
+                class="com.aboat365.tetris.action.AboutAction"
+                icon="AllIcons.Actions.Help">
+            <add-to-group group-id="tetrisAction"/>
+        </action>
+    </actions>
+</idea-plugin>

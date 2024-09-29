@@ -1,0 +1,11 @@
+[versions]
+
+# plugins
+intelliJPlatform = "2.0.1"
+kotlin = "2.0.0"
+
+[libraries]
+
+[plugins]
+intelliJPlatform = { id = "org.jetbrains.intellij.platform", version.ref = "intelliJPlatform" }
+kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
